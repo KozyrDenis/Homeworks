@@ -59,8 +59,37 @@ import UIKit
 нечетные числа #1
 */
 
-var l: (Int, Int, Int, Int, Int) = (3, 26, 7, 48, 5)
-print([3, 26, 7, 48, 5].filter { $0 % 2 == 0})
+let numbers: (Int, Int, Int, Int, Int) = ( -4, 26, 7, 48, 5)
+//solution 1
+if numbers.0 < 0, numbers.0 % 2 == 0 {
+    print("\(numbers.0) even")
+}
+
+if numbers.0 % 2 == 0 {
+    print("\(numbers.0) even")
+}
+if numbers.1 % 2 == 0 {
+    print("\(numbers.1) even")
+}
+if numbers.2 % 2 == 0 {
+    print("\(numbers.2) even")
+}
+if numbers.3 % 2 == 0 {
+    print("\(numbers.3) even")
+}
+if numbers.4 % 2 == 0 {
+    print("\(numbers.4) even")
+}
+// solution 2
+
+let numbersArray: [Int] = [numbers.0 ,numbers.1 ,numbers.2, numbers.3, numbers.4]
+for number in numbersArray {
+    if number % 2 == 0, number < 0 {
+        print("\(number) even")
+    }
+}
+
+
 
 //не смог прописать данное действие сам, вписал то, которое нашел в инете//
 
@@ -68,19 +97,49 @@ print([3, 26, 7, 48, 5].filter { $0 % 2 == 0})
 нечетные числа #2
 */
 
-var a: (Int, Int, Int, Int, Int) = (-4, 12, -8, 24, -44)
+var radius: ( Int, Int, Int, Int ) = (-2, -4, -7, 8)
 
+if radius.0 < 0 {
+    print("\(radius.0) true")
+}
+if radius.0 % 2 == 0 {
+    print("\(radius.0) true even")
+}
+if radius.1 < 0 {
+    print("\(radius.1) true")
+}
+if radius.1 % 2 == 0 {
+    print("\(radius.1) true even")
+}
+if radius.2 < 0 {
+    print("\(radius.2)  true")
+}
+if radius.2 % 2 == 0 {
+    print("\(radius.2) true even")
+}
+if radius.3 < 0 {
+    print("\(radius.3) true")
+}
+if radius.3 % 2 == 0 {
+    print ("\(radius.3) true even")
+}
+    
+    
 
-
+/*
+if numbers.0 < 0, numbers.0 % 2 == 0 {
+    print("\(numbers.0) even")
+}
+ */
 /*
 task 3-  Игра в кости
  */
-
+/*
 let number: Int = 0
 var name: String = "box"
 
 let colors: (String, Int, String) = ("blue", 0, "grey")
-
+*/
 
 
 /*
