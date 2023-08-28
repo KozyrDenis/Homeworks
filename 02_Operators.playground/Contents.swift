@@ -97,35 +97,20 @@ for number in numbersArray {
 нечетные числа #2
 */
 
-var radius: ( Int, Int, Int, Int ) = (-2, -4, -7, 8)
+var radius: ( Int, Int, Int, Int ) = (2, -4, -7, -8)
 
-if radius.0 < 0 {
+if radius.0 < 0, radius.0 % 2 == 0 {
     print("\(radius.0) true")
 }
-if radius.0 % 2 == 0 {
-    print("\(radius.0) true even")
-}
-if radius.1 < 0 {
+if radius.1 < 0, radius.1 % 2 == 0 {
     print("\(radius.1) true")
 }
-if radius.1 % 2 == 0 {
-    print("\(radius.1) true even")
-}
-if radius.2 < 0 {
+if radius.2 < 0, radius.2 % 2 == 0 {
     print("\(radius.2)  true")
 }
-if radius.2 % 2 == 0 {
-    print("\(radius.2) true even")
-}
-if radius.3 < 0 {
+if radius.3 < 0, radius.3 % 2 == 0{
     print("\(radius.3) true")
 }
-if radius.3 % 2 == 0 {
-    print ("\(radius.3) true even")
-}
-    
-    
-
 /*
 if numbers.0 < 0, numbers.0 % 2 == 0 {
     print("\(numbers.0) even")
