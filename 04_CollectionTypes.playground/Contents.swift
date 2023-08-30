@@ -6,22 +6,22 @@ import UIKit
  TODO: - 🧑‍💻 Выполните каждый из пунктов для закрепления материала. Решение пишите на следующей строке после задания:
  // - проинициализируйте два пустых массива foodArray and drinkArray разными способами
  */
-//var foodArray: [String] = []
-//var drinkArray: [String] = []
+var foodArray: [String] = []
+var drinkArray: [String] = []
 //взял в кавычки так как выдавало ошибку
 
  // - присвойте первому массиву стринг значения - названия продуктов (минимум 5)
-var foodArray: [String] = ["burger", "sandwich", "frenchfries", "chocolate", "cheese", "sausage"]
+foodArray = ["burger", "sandwich", "frenchfries", "chocolate", "cheese", "sausage"]
 
  // - присвойте второму массиву названия напитков (минимум 5)
-var drinkArray: [String] = ["milk", "cola" , "coffee", "beer" , "water", "juice"]
+drinkArray = ["milk", "cola" , "coffee", "beer" , "water", "juice"]
 
  // - добавьте в конец foodArray еще одно значение
-foodArray.insert("butter", at: 6)
-
+foodArray.append("butter")
  // - добавьте в середину drinkArray еще одно значение
-drinkArray.insert("coconut milk", at: 3)
- 
+let midleIndex = drinkArray.count / 2
+drinkArray.insert("coconut milk", at: midleIndex)
+ print(drinkArray)
  // - создайте третий массив shoppingList, который должен включать в себя все значения из foodArray and drinkArray
  var shoppingList = foodArray + drinkArray
  
@@ -29,6 +29,7 @@ drinkArray.insert("coconut milk", at: 3)
 print(shoppingList)
 print(shoppingList.count)
  // - удалите первое и последнее значение, значение по индексу 2 из shoppingList
+print(shoppingList.count)
 shoppingList.remove(at:0)
 shoppingList.remove(at:12)
 shoppingList.remove(at: 2)
@@ -67,10 +68,21 @@ firstSet.isSuperset(of:secondSet)
 Используйте коллекции для обозначения списка ингридиетов. Для каждого блюда будет свой список ингридиентов, вводим значения. Так же отдельные списки для ингридиетов которые у вас есть (вводим значение) и для ингридиетов, которые нужно купить (вычисляем на основе того, что нужно и того, что есть).
  
  Подумайте, какой тип коллекций лучше всего подходит для решения задачи.
+
 */
- 
+var refreeArray: Set = ["milk", "potatoes","carrot", "meat", "oil", "syrop"]
+
+var dessert: Set = ["milk", "berries", "chocolate", "cream"]
+var salad: Set = ["cucumbers", "tomatoes", "oil", "salt", " dill"]
+var main: Set = ["oil", "potatoes", "carrot", "sour cream", "meat", "dill"]
+dessert.subtracting(refreeArray)
+salad.subtracting(refreeArray)
+main.subtracting(refreeArray)
+
 /*
  TODO: - ❓ Вопросы к изучению (писать ответы не нужно, но быть готовым ответить):
  - Чем отличаются друг от друга array, set and dictionary?
  - Какие операции можно с ними выполнять?
  */
+let string = "home"
+string.hashValue
