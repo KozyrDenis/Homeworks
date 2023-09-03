@@ -78,11 +78,18 @@ var main: Set = ["oil", "potatoes", "carrot", "sour cream", "meat", "dill"]
 dessert.subtracting(refreeArray)
 salad.subtracting(refreeArray)
 main.subtracting(refreeArray)
+print(dessert.subtracting(refreeArray))
+print(salad.subtracting(refreeArray))
+print(main.subtracting(refreeArray))
+let second = main.subtracting(refreeArray)
+let three = salad.subtracting(refreeArray)
+let four = dessert.subtracting(refreeArray)
 
+let all = second.union(three).union(four)
+print(all)
 /*
  TODO: - ❓ Вопросы к изучению (писать ответы не нужно, но быть готовым ответить):
  - Чем отличаются друг от друга array, set and dictionary?
  - Какие операции можно с ними выполнять?
  */
-let string = "home"
-string.hashValue
+
