@@ -15,16 +15,17 @@ import UIKit
  Изменилось ли значение для первого экзепляра?
  */
 struct House{
-    let addres = "Khabarovsk"
-    let S = "34.5"
-    let toilets = "1"
-    let swimmingPool = "No"
-    var price = "30 000"
+    let address = "Khabarovsk"
+    let area = 34.5
+    let toilets = 1
+    let swimmingPool = false
+    var price = 30000
+    var numbersOfRoom = 2
 }
-var House2: House = House()
-print(House2)
-House2.price = "13 000"
-print(House2)
+var house1: House = House()
+print(house1)
+house1.price = 13000
+print(house1)
 print(House())
 /*
  Создайте класс Apartment.
@@ -40,15 +41,15 @@ print(House())
  Выведите в консоль информацию, ссылаются ли 2 переменные класса на один и тот же объект или на разные.
  */
 class Apartment {
-    let addres = "Khabarovsk"
-    let S = "34.5"
-    let toilets = "1"
-    let swimmingPool = "No"
-    var price = "30 000"
+    let address = "Khabarovsk"
+    let area = 34.5
+    let toilets = 1
+    let swimmingPool = false
+    var price = 30000
 }
-var Apartment1 = Apartment()
-Apartment1.price = "5 000"
-print(Apartment1.price)
+var apartment1 = Apartment()
+apartment1.price = 5000
+print(apartment1.price)
 print(Apartment().price)
 /*
  TODO: - ❓ Вопросы к изучению (писать ответы не нужно, но быть готовым ответить):
