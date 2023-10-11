@@ -8,68 +8,40 @@ import UIKit
  Добавьте в класс свойство isValid, которое будет проверять минимальную и максимальную длину имени. Оно не может быть короче 2 символов и длиннее 15 символов.
  */
 class Student {
-    lazy var greeting = "Hello our student \(firstName)"
     var firstName: String {
-        willSet {
-            print("name \(firstName) will be change")
-        }
         didSet {
-            if firstName != firstName {
-                print("present name now is \(firstName)")
-            }
+            print("new firstName \(firstName)")
         }
     }
-    init(firstName: String = "Denis") {
+    var isValid: Bool { firstName.count > 2 && firstName.count < 15 }
+    
+    init(firstName: String) {
         self.firstName = firstName
     }
 }
-@propertyWrapper
-class RangedValue {
-    var quantity = 10
-    var countCharacter = 0
-    var minCharacters = 2
-    var maxCharacters = 15
-    var wrappedValue: Int {
-        get {
-            if countCharacter < minCharacters {
-                print("Your name is short")
-            } else {
-                print ("name is acceptable")
-            }; if countCharacter > maxCharacters {
-                print("You name is longer")
-            } else {
-                print("Name is acceptable")
-            }
-            return countCharacter
-        }
-    }
-}
-var nameStudent = Student.init(firstName: "Denis")
-nameStudent.firstName = "Michael"
+
+var student = Student(firstName: "Denis")
+Student(firstName: "Denis")
+student.firstName = "M"
+student.isValid
 /* 2.
  Создайте класс Person со свойством age, типа Int. Добавьте property observer к свойству age, чтобы гарантировать, что свойство не может быть отрицательным. Если приходит отрицательное значение, то свойство должно возвращать 0.
  */
 class Person {
     var age: Int {
-        willSet {
-            if age < 0 {
-                print(0)
-            }
-        }
         didSet {
-            if age > 0 {
-                print("✅")
+            if age < 0 {
+                age = 0
             }
         }
     }
+    
     init(age: Int) {
         self.age = age
     }
 }
-var personAge = Person.init(age: 26)
-personAge.age = -21
+var personAge = Person.init(age: 25)
 personAge.age = -1
-personAge.age = -52
 
 /*
  Создайте структуру Rectangle со свойствами width и height. Добавьте computed property с именем area, которое будет возвращать площадь прямоугольника (width * height).
@@ -82,14 +54,10 @@ struct Rectangle {
         get {
             return width * height
         }
-        set {
-            newValue * newValue
-        }
     }
     init(width: Int, height: Int) {
         self.width = width
         self.height = height
-        self.area = area
     }
 }
 Rectangle(width: 4, height: 4)
@@ -105,35 +73,31 @@ rec2.area
 */
 
 class User {
-    var name: String
-    var surname: String
+    let name: String
+    let surname: String
     lazy var weightMessage: String = "Your weight is \(weight) now. Difference is \(weight - maxWeight) from maximum weight \(maxWeight) and \(weight - minWeight) from minimum weight \(minWeight)"
-    var height: Float
+    let height: Float
     var age: Int {
         willSet{
             print(age)
         }
         didSet{
-            if age != 26 {
                 print("Happy Birthday")
-            }
         }
     }
-    var minWeight: Int
-    var maxWeight: Int
+    let minWeight: Int
+    let maxWeight: Int
     var weight: Int {
         willSet {
             print("Your weight is \(weight)")
         }
         didSet{
             if weight > maxWeight {
-                print(weightMessage)
+                weight = maxWeight
             }
             if weight < minWeight {
-                print(weightMessage)
+                weight = minWeight
             }
-            weight = maxWeight
-            weight = minWeight
         }
     }
     init(name: String, surname: String, height: Float, age: Int, minWeight: Int, maxWeight: Int, weight: Int) {
@@ -150,6 +114,7 @@ var Denis = User(name: "Denis", surname: "Kozyr", height: 1.45, age: 26, minWeig
 print(Denis.weight)
 Denis.weight = 130
 Denis.age = 23
+Denis.age = 56
 var value = Denis.self
 
 /*
